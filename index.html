@@ -134,6 +134,38 @@
     const name = users2.sort((a, b) => a.name > b.name ? 1 : -1)
     console.table(name)
 
+    const totalYears = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0)
+    console.log(totalYears)
+
+    const numbers = [1, 2, 3, 4, 5];
+    const words = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+
+    const sum = numbers.reduce((total, number) => {
+      return total + number;
+    }, 0)
+    console.log(sum)
+
+    const sentence = words.reduce((acc, word) => acc + ' ' + word)
+    console.log(sentence)
+
+    const customers = [
+      { name: 'Alice', married: true, expense: 500 },
+      { name: 'Bob', married: false, expense: 200 },
+      { name: 'Charlie', married: true, expense: 1000 },
+      { name: 'Dave', married: false, expense: 150 },
+      { name: 'Eve', married: true, expense: 690 }
+    ];
+
+    const totalExpenses = customers
+      .filter(customer => customer.married)
+      .map(customer => customer.expense)
+      .reduce((total, expense) => total + expense, 0)
+
+    console.log(totalExpenses)
+
+
   </script>
 </body>
 
